@@ -16,6 +16,8 @@ verbose = ARGV.index('-v')
 xls_package = Axlsx::Package.new
 wb = xls_package.workbook
 sheet = wb.add_worksheet(:name => "Timesheet")
+first_duration = nil
+last_duration = nil
 
 #time_style = xls_package.workbook.styles.add_style(:format_code => "yyyy-mm-dd", :border => Axlsx::STYLE_THIN_BORDER)
 
@@ -60,6 +62,8 @@ open(google_cal_url) do |f|
 		c_sum = rw.add_cell(summary)
 		c_sum.style = cell_style
 
+		first_duration = c_diff if first_duration.nil?
+		last_duration = c_diff
 
 		month_key = "#{event.dtstart.year}-#{event.dtstart.month}"
 		if min_by_month[month_key]
@@ -79,7 +83,7 @@ open(google_cal_url) do |f|
 		end
 		total += minutes
  	end
-	sheet.add_row ["", "", "", "=SUM()", ""], :style => sum_style
+	sheet.add_row ["", "", "", "=SUM(#{first_duration.r}:#{last_duration.r})", ""], :style => sum_style
 
 	puts "Total #{total/60}h #{total%60}min"
 end
