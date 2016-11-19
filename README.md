@@ -1,6 +1,6 @@
 # PARSECAL
 
-A simple ruby script to read and parse a google calendar and create an Excel Timesheet.
+A simple ruby script to read and parse time tracking data from a google calendar and create an *Excel Timesheet* for documentation, further processing or invoices.
 
 ## Prerequisites:
 Set up a google calendar for your time tracking project and export the iCal URL. To do so, open the google calendar page, select "settings", "calendars" and select your calendar. On the calendars detail page, click the private iCal URL Button (see image below).
@@ -20,3 +20,10 @@ Also [axlsx](https://github.com/randym/axlsx) spreadsheet library is required:
 (make sure zlib1g-dev is installed on linux)
 
 (The ["spreadsheet"](https://github.com/zdavatz/spreadsheet) turned out quite disappointing for this purpose. Formulas did not work and there was very little documentation)
+
+## Applications and Ideas for Further Development
+
+- Automatically executed as Cron-Job
+- As basis for a microservice
+- Backend Service for a simple App
+- Integration with E-Mail, Cloud Storage etc.
