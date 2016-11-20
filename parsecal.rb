@@ -6,6 +6,9 @@ require 'open-uri'
 require 'axlsx'
 include Icalendar # Probably do this in your class to limit namespace overlap
 
+# set calendar URL here
+google_cal_url = 'TODO Add your calendar URL here'
+
 # class for excel sheets
 class MonthSheet
 	attr_accessor :sheet, :title , :headline_style, :time_style, :date_style, :cell_style, :sum_style
@@ -34,7 +37,6 @@ class MonthSheet
 end
 
 # initialize variables
-google_cal_url = 'TODO Add your calendar URL here'
 total = 0
 min_by_month = Hash.new
 min_by_tag = Hash.new
