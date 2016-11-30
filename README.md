@@ -19,15 +19,12 @@ Set up a google calendar for your time tracking project and export the iCal URL.
 
 Set the variable "*google_cal_url*" in parsecal.rb to this iCal URL (line 10).
 
-The script requires the [icalendar](http://icalendar.rubyforge.org/) gem:
+The script requires the [icalendar](http://icalendar.rubyforge.org/) gem and the [axlsx](https://github.com/randym/axlsx) spreadsheet library. Dependencies can be installed via bundle:
 
-    sudo gem install icalendar
-
-Also [axlsx](https://github.com/randym/axlsx) spreadsheet library is required:
-
-    sudo gem install axlsx
+    bundle install
 
 (make sure zlib1g-dev is installed on linux)
+
 
 (The ["spreadsheet"](https://github.com/zdavatz/spreadsheet) gem turned out quite disappointing for this purpose. Formulas did not work and there was very little documentation)
 
